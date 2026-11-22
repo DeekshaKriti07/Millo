@@ -1,0 +1,7 @@
+{
+  "name": "millo-market",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.13"},
+  "scripts": {"dev": "node server/local.mjs", "start": "node server/local.mjs", "build": "node scripts/build.mjs", "test": "node --test"}
+}

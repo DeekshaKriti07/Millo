@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="opening">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111747"><meta name="description" content="Shop Indian pantry favourites, fresh produce and better snacks. Read the product evidence behind all seven Millo score criteria.">
+  <title>Millo — The good grocery run</title>
+  <link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/style.css">
+  <script defer src="/boot.js"></script>
+  <noscript><style>#opening-loader{display:none!important}.opening #storefront{visibility:visible}</style></noscript>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<div id="opening-loader" class="millo-loader" aria-hidden="true"><div class="loader-brand">millo<span>.</span></div><div class="loader-track"><i></i><i></i><i></i></div><p>Getting the cart ready</p></div>
+<div id="storefront">
+<a class="skip" href="#market">Skip to groceries</a>
+<header class="header">
+  <div class="shell header-inner">
+    <a class="logo" href="/" aria-label="Millo home">millo<span>.</span></a>
+    <button class="location" id="location" type="button"><span data-icon="pin"></span><span><small>DELIVER TO</small><strong id="location-label">Set your location</strong></span><span class="chevron" aria-hidden="true"></span></button>
+    <form class="search" role="search"><label class="sr" for="search">Search the market</label><span data-icon="search"></span><input id="search" type="search" placeholder="Search products or brands" autocomplete="off"><kbd aria-hidden="true">/</kbd></form>
+    <button class="head-action favorite-action" id="favorite-view" type="button" aria-label="Saved items" title="Saved items"><span data-icon="heart"></span></button>
+    <button class="head-action order-action" id="order-view" type="button" aria-label="My orders" title="My orders"><span data-icon="receipt"></span></button>
+    <button class="cart-button" id="cart-button" type="button"><span data-icon="bag"></span><span>Cart</span><b id="cart-count">0</b></button>
+  </div>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-photo" src="/assets/market-hero.webp" alt="" fetchpriority="high">
+    <div class="hero-content shell"><p class="hero-label"><i></i> THE GOOD GROCERY RUN</p>
+      <h1 id="hero-title">Know your<br><em>groceries.</em></h1>
+      <p>Indian pantry favourites, fresh produce and better snacks. See what’s inside before it goes in your cart.</p>
+      <div class="hero-actions"><a class="hero-link" href="#market">Shop groceries</a><button class="replay" id="replay-intro" type="button"><i aria-hidden="true"></i>Play intro</button></div>
+    </div>
+  </section>
+  <div class="values"><span>Free delivery on ₹499+</span><span>10 aisles to explore</span><button type="button" data-view="method">How we score groceries</button></div>
+  <div class="shell">
+  <section class="categories" aria-labelledby="category-title"><div class="section-heading"><div><p class="eyebrow">THE GROCERY RUN</p><h2 id="category-title">Pick an aisle.</h2></div><button class="text-link" type="button" id="all-aisles">Browse everything</button></div><div id="category-list" class="category-list"></div></section>
+  <section class="market" id="market" aria-labelledby="market-title"><button type="button" id="browse-back" class="back-link" hidden>← Previous page</button><div class="section-heading"><div><h2 id="market-title">Shop all groceries</h2><p id="visible-count" class="note"></p><p class="note price-disclaimer">Demo prices in INR</p></div><label class="sort"><span>Sort by</span><select id="sort"><option value="featured">Featured</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option><option value="score">Healthy Product Score</option><option value="name">Name A–Z</option></select></label></div>
+  <div class="filters"><button type="button" data-filter="all" class="active">All products</button><button type="button" data-filter="plant">Vegan</button><button type="button" data-filter="budget">Under ₹150</button><button type="button" data-filter="qualified">Score qualified</button></div>
+  <p id="results" class="sr" aria-live="polite"></p><div id="products" class="products"></div><button type="button" id="load-more" class="secondary load-more" hidden>Show more products</button></section>
+  <section class="bottom-banner"><div><h2>Read the score.<br>Then read the label.</h2><p>See the nutrients, ingredients and processing evidence behind every score.</p></div><button type="button" class="hero-link" data-view="method">Explore the scoring method</button><span class="banner-mark" aria-hidden="true">✳</span></section>
+  </div>
+</main>
+<footer><div class="shell footer"><a class="logo" href="/" aria-label="Millo home">millo<span>.</span></a><p>The good food market</p><button type="button" class="text-link" id="footer-orders">My orders</button></div></footer>
+</div>
+<dialog id="panel" aria-labelledby="panel-title"><div class="panel-inner"><header class="panel-header"><div><button type="button" id="panel-back" class="back-link">← Back</button><h2 id="panel-title"></h2></div><button type="button" class="head-action close-panel" aria-label="Close" data-close><span data-icon="close"></span></button></header><div id="panel-body"></div></div></dialog>
+<dialog id="intro" class="intro" aria-label="Millo opening film">
+  <div id="intro-stage" class="intro-stage">
+    <video id="intro-video" muted playsinline preload="none" aria-label="Millo's Just one thing cartoon. A shopper plans to buy one thing. Millo asks what one means as the cart fills with groceries."></video>
+    <div class="millo-loader intro-loader" role="status"><div class="loader-brand">millo<span>.</span></div><div class="loader-track" aria-hidden="true"><i></i><i></i><i></i></div><p>Getting the cart ready</p></div>
+    <button type="button" id="intro-skip">Skip intro <span aria-hidden="true">×</span></button>
+    <div class="intro-progress" aria-hidden="true"><span></span></div>
+  </div>
+</dialog>
+<div id="toast" role="status" class="toast"></div>
+</body>
+</html>
